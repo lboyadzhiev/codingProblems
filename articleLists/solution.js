@@ -25,17 +25,19 @@ function createElement(type, content) {
     return e;
 }
 
-function createArticle(items, titleInput, contentInput) {
-    let titleValue = titleInput.value;
-    let contentValue = contentInput.value;
+function createArticle(callback, titleValue, contentValue) {
+    if (titleValue !== '' && contentValue !== '') {
+        callback(createElement('h3', titleValue));
+        callback(createElement('p', contentValue));
+    }
+}
 
-    let h3 = createElement('h3', titleValue);
-    let p = createElement('p', contentValue);
-    let item = createElement('article');
-    item.appendChild(h3);
-    item.appendChild(p);
+function clickHandler(callback, titleInput, contentInput) {
+    createArticle(callback, titleInput.value, contentInput.value);
+}
 
-    items.appendChild(item);
+function addToHTML(parent, child) {
+    parent.appendChild(child);
 }
 
 function main() {
@@ -47,10 +49,14 @@ function main() {
     if (action === null || items === null || titleInput === null || contentInput === null) {
         throw new Error('Missing dom elements');
     }
-    action.addEventListener(
-        'click',
-        createArticle.bind(undefined, items, titleInput, contentInput)
+
+    const boundClickHandler = clickHandler.bind(
+        undefined,
+        addToHTML.bind(undefined, items),
+        titleInput,
+        contentInput
     );
+    action.addEventListener('click', boundClickHandler);
 }
 
 document.addEventListener('DOMContentLoaded', main);
