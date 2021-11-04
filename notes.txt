@@ -1,3 +1,129 @@
-We can't add "removeEventListener" to a function, so we make variable.
+JS
 
-.bind() - 
+    OBJECTS ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+        Everything in JS is object.
+
+        WHAT IS OBJECT?
+            An object is a collection of fields, and a field is an association between a name(or key) and value.
+            A filed's value can be a fucntion, in which case it is known as method.
+            Objects are a reference data type, safe in HEAP.
+        
+        DEFINING OBJECTS  
+
+            1. create a JS object with an "object literal {}"
+
+                    let object = {key: value, key: value};
+                
+        ASSIGNING AND ACCESSING PROPERTIES (key or value)
+ 
+            1. Simple dot-notation
+
+                let object = {};
+                object.key = value;
+            
+            2. Bracket-notation 
+
+                object["key"] = value; 
+
+                ! Use it when we have spaces in key.
+
+        OBJECT METHODS
+
+            Methods are actions that can be performed on objects.
+            Methods are stored in properites as fucntion definition.
+
+            ! We can't use lambda function, in JS this type of functions have explicity assignment this and it can't be changed. 
+
+
+            let object = {
+                keyOne: valueOne,
+                keyTwo: valueTwo,
+                keyThree: fucntion () {
+                    return this.keyOne + '' + this.keyTwo;
+                }
+            }
+            
+            console.log(object.keyThree()); // valueOne valueTwo
+
+        WHAT IS "this" KEYWORD
+
+            In JS 'this' means context. This context is execution. Every function in JS has execution context and execution scope(lexical scope). The 'this' keyword refers to the currnet object the code is being written inside. This will always ensure that the correct values are used when a member's context changes.
+
+        COMPARING OBJECTS
+
+            Two variables, two distinct objects with the same properites.
+
+                let objectOne = {keyOne: "valueOne"};
+                let objectTwo = {keyTwo: "valueTwo"};
+
+                objectOne == objectTwo; // return false
+
+            Two variables, a singe object
+
+                let objectOne = {keyOne: "valueOne"};
+                let objectTwo = objectOne; // Assign objectOne reference to objectTwo
+
+                Here the two variables are pointing to same object
+
+                objectOne == objectTwo; // return true
+
+        INTERNAL PROPERTIES
+
+            Every object field has four properites:
+
+                1. Enumerable - can access to all of them using a for...in loop. Also, enumerable property keys of an object are returned using "Object.keys" method;
+                2. Configurable - can modify the behavior of the property, so you can make them non-enumerable, non-writeble or even non-configurable;
+                    -- We can delete only configurable properites;
+                3. Writable - can modify their values and update a property just assigning a new value to it;
+                4. Value 
+
+
+                    let obj = {};
+
+                    Object.defineProperties (
+                        obj,
+                        {
+                            "key": {
+                                get: () => {  },
+                                set: () => {  },
+                                //configurable: true,
+                                //enumerable:false,
+                                //writeble: false,
+                                //value: some value
+                            }
+                        }
+                    )
+
+                "get" "set"
+
+                "set" - can be only fucntion that have param
+                "get" - can be fucntion as well
+
+
+        LOOPING THROUGH OBJECTS
+
+             Objects are looping through keys.
+
+             "Object keys" - we take the keys, return Array. It is good practise when we take the keys from object to check if they are keys from this object "hasOwnProperty". 
+
+             "Object values" - return values from the object.
+
+             "for...in Loop" - iterates a specified variable over all the enumerable properites of an object.
+             "for...of Loop" - creates a loop iterating over iterable objects.
+
+
+
+
+
+    We can't add "removeEventListener" to a function, so we make variable.
+
+        Debugging in Chrome 
+
+            1. open devtools - ctr + shift + j
+            2. click "Sources";
+
+        what is "bind"?
+
+            1. Bind an object to a function;
+            2. Reference it using 'this';
