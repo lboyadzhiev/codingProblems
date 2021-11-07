@@ -127,13 +127,15 @@ JS
                 Use "JSON.stringify()" to convert objects into a string.
 
                 let obj = {key: value}
-                let objJSON = JSONj.stringify(obj);
+                let objJSON = JSON.stringify(obj);
 
                 we can do the same for arrays.
 
+        ! rownd to the second number  - Math.floor(value * 100) / 100;
 
 
-                
+
+
 
     We can't add "removeEventListener" to a function, so we make variable.
 
