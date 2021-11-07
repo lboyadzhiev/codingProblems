@@ -112,9 +112,28 @@ JS
              "for...in Loop" - iterates a specified variable over all the enumerable properites of an object.
              "for...of Loop" - creates a loop iterating over iterable objects.
 
+        JSON
+
+            A common use of JSON is to read data from a web server, and display the data in a web page.
+
+            PARSING FROM STRINGS
+
+                Use JS built-in function "JSON.parse()" to convert the string into a JS object.
+
+                let obj = JSON.parse(text);
+
+            CONVERT TO STRING
+
+                Use "JSON.stringify()" to convert objects into a string.
+
+                let obj = {key: value}
+                let objJSON = JSONj.stringify(obj);
+
+                we can do the same for arrays.
 
 
 
+                
 
     We can't add "removeEventListener" to a function, so we make variable.
 
