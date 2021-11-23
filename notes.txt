@@ -173,3 +173,47 @@ JS
 
             1. Bind an object to a function;
             2. Reference it using 'this';
+
+    FUNCTIONS 
+
+        Functions are one of the fundamental building blocks in JS. A fucntion in JS is similar to a procedure - a set of statements that performs a task, take some input and return an output where there is some abvious relationship between the input and the output. To use a fucntion, we must define it somewhere in the scope from which we wish to call it.
+
+            -- Fucntion Declaration
+
+                The fucntion declaration defines a fucntion with the specified parameters.
+
+                    <script>
+
+                        fucntion name(params) {
+                            [statements]
+                        }
+
+                    </script>
+
+                "name" - the fucntion name;
+
+                "params" - optional. The name of an argument to be passed to hte fucntion.
+
+                "statements" - the statements which comprise the body of the fucntion.
+
+                A fucntion created with a fucntion declaration is a Function object and has all the porperties, methods and behavior of Fucntion object.
+
+                By default, fucntions return 'undefined'. To return any other value, the fucntion must have a 'retur' statement that specifies the value to return.
+
+                Hoisting!!!
+
+                    Function declaration in JS are hoisted to the top of the enclosing fucntion or global scope. That is mead we can use the function before we declare it.
+            
+
+            -- Function Expression
+
+                A fucntion Expression is very similar to and almost the same syntax as fucntion declaration. The main difference is the function name. which can be omitted in fucntion expression to create anonymous fucntions.
+
+                    const name = fucntion(param) {
+                        statements
+                    }
+
+                Hoisting!!!
+
+                    Fucntion expression in JS are not hoisted. We can't use fucntion expression before we create them.
+
