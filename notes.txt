@@ -48,7 +48,32 @@ JS
 
         WHAT IS "this" KEYWORD
 
-            In JS 'this' means context. This context is execution. Every function in JS has execution context and execution scope(lexical scope). The 'this' keyword refers to the currnet object the code is being written inside. This will always ensure that the correct values are used when a member's context changes.
+            In JS 'this' means context. This context is execution. Every function in JS has execution context and execution scope(lexical scope). The 'this' keyword refers to the current object the code is being written inside. This will always ensure that the correct values are used when a member's context changes. Arrow functions does not get own "this" keyword! The arrow function use lexical "this" that mean it use the "this" keyword from the parent scope. 
+
+                <script>
+                    const objOne = {
+                        kyeOne: valueOne,
+                        keyTwo: valueTwo,
+                        method: function () {
+                            console.log(this.keyOne - this.keyTwo);
+                        }
+                    }
+
+                    objOne.method();
+
+                    const objTwo = {
+                        keyOne: vlaueOne,
+                        keyTwo: valueTwo
+                    }
+
+                    objTwo.method = objOne.method;
+
+                    objTwo.method();
+                </script>
+
+            The "this" keyword will point to the object that is calling the method.  In this example the objTwo is calling the mothod, so the "this" keyword that is isnide the method is pointing to the objTwo keys.
+
+            NOTE:Wen we coppy one method to another we don't call it "()"
 
         COMPARING OBJECTS
 

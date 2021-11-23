@@ -8,6 +8,8 @@ Output
     • Latitude and longitude must be parsed to numbers, and represented till the second digit after the decimal point!
  */
 
+function extractKeys(str) {}
+
 function solve(data) {
     let keys = [];
     let keysToBe = data[0].split('|');
