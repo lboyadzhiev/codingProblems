@@ -72,8 +72,9 @@ JS
                 </script>
 
             The "this" keyword will point to the object that is calling the method.  In this example the objTwo is calling the mothod, so the "this" keyword that is isnide the method is pointing to the objTwo keys.
+            If we have fucntion in method, the "this" keyword does not work in the function, so we can solve this problem by making a variable outside the fucntion wich is equal to 'this', ot we can use an Arrow Fucntion (the arrow function does not have own "this" keyword, and use "this" from the parent scope).
 
-            NOTE:Wen we coppy one method to another we don't call it "()"
+            NOTE:Wen we coppy one method to another we don't call it "()".
 
         COMPARING OBJECTS
 
@@ -216,4 +217,81 @@ JS
                 Hoisting!!!
 
                     Fucntion expression in JS are not hoisted. We can't use fucntion expression before we create them.
+
+            -- Arrow Function   
+
+                Comparing traditional functions to arrow functions.
+
+                    // Traditioanl Anonymous Function
+
+                        <script>
+
+                            function (a) {
+                                return a + 100;
+                            }
+
+                        </script>
+
+                    // Arrow fucntion break down
+
+                        // 1. Remove the word "function" and pleace arrow between the argument and opening body bracket:
+
+                            <script>
+
+                                (a) => {
+                                    return a + 100;
+                                }
+
+                            </script>
+
+                        // 2. Remove the body braces and word "return" -- the return in implied.
+
+                            <script>
+                                (a) => a + 100;
+                            </script>
+
+                        // 3. Remove the argument parantheses
+
+                            <script>
+                                a => a + 100;
+                            </script>
+
+                        The { braces } and (parantheses) and "return" are required in some cases. 
+                            - If we have multiple arguments, we will need to re-introduce parantheses around the arguments.
+                            - If the body requires additional lines of processing, we will need to re-introduce braces plush the "return".
+
+                                <script>
+                                    (a, b) => {
+                                        let chuck = 42;
+                                        return a + b + chuck;
+                                    }
+                                </script>
+                        
+                        For named fucntions we treat arrow expressions like varibales:
+
+                            <script>
+                                let bob = a => a + 100;
+                            </script>
+
+                        To return an object literal expression requires parentheses around expression:
+
+                            <script>
+                                params => ({foo: "a"});
+                            </script>
+
+                        Rest parameters are supported: 
+
+                            (a,b, ...r) => expression;
+                        
+                        Default parameters are supported:
+
+                            (a=400, b=20, c) => expression;
+
+                        Destructuring within params supported:
+
+                            ([a, b] = [10, 20]) => a + b; // result is 30;
+                            ({ a, b } = { a: 10, b:20 }) => a + b; // result is 30;
+
+                        Arrow function is not ok for methods, it has no own "this" keyword. Use his parrent 'this'.
+
 
