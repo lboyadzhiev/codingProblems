@@ -1,4 +1,39 @@
 JS
+    PRIMITIVE VS. REFERENCE TYPES
+
+        Primitive data types 
+
+            - Number;
+            - String;
+            - Boolean;
+            - Undefined;
+            - Null;
+            - Symbol;
+            - BigInt;
+        
+        Reference data types 
+
+            - Objects:
+                - Object literal;
+                - Arrays;
+                - Functions;
+                - ect...
+
+        Js Engine
+
+            The JS Engine has two components: 
+             
+                - Call Stack;
+                    Where functions are executed, and primitive types are stored. Here execution context run.
+
+                    When we declare a primitive type JS creates a unique identifier call variable name, then a piece of memory will be alocated with a certain address, then the value will be stored in memory with the specifyed address.
+                    !! Identifier point to the addres not to the value. Adress is imutable, so it can't be changed. If we change the value of the variable it create new address where it is stored.
+
+                - Heap;
+                    Reference type are stored in memory. When a new object is created it is stored in the HEAP. And such as before there is memory address and value. The object identifieer does not point to directly in memory address in the Heap, instead it is point to the new piece of memory created in the STACK. and then this piece of memory point to the object address in the HEAP, by usin a memory address as it's value. 
+                    The piece of memory in the callStack has the piece of memory in the Heap wich holdes the object. That is becouse the objects can be a large the heap is unlimited.
+
+            
 
     OBJECTS ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -175,7 +210,7 @@ JS
             1. Bind an object to a function;
             2. Reference it using 'this';
 
-    FUNCTIONS 
+    FUNCTIONS //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
         Functions are one of the fundamental building blocks in JS. A fucntion in JS is similar to a procedure - a set of statements that performs a task, take some input and return an output where there is some abvious relationship between the input and the output. To use a fucntion, we must define it somewhere in the scope from which we wish to call it.
 
