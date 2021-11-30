@@ -31,11 +31,13 @@ JS
                         age: 30,
                     }
 
-                    Object.assign({}, objOne);
+                 const objCoppy = Object.assign({}, objOne);
                 </script>
+            
+            The problem here is that, the 'Object.assign' works only for first level, that means, if we have object in the object the inner one goin to be the same (same place to the memory). 
+            "Object.assign" creates a shalow coppy not deep one.
 
-
-                Obje
+                !!!    How to create a deep clone!!!
 
         Js Engine
 
@@ -348,6 +350,44 @@ JS
                         Arrow function is not ok for methods, it has no own "this" keyword. Use his parrent 'this'.
 
 
+    Arrays
+
+        Desctructuring Arrays   
+
+            Meaning - unpacking value in array to a variables. Desctructuring does not affect the original array, we need to specify the variables in [] with declaration(let, const);
+
+
+
+                <script>
+                    const arr = [1, 2, 3];
+
+                    const [x, y, z] = arr;
+                </script>
+            
+            If we want to take elements that are not in the row. I just make a hole between the element until we reach the disered one.
+
+                <script>
+                    const arr = [1, 2, 3];
+                    const [x, , z] = arr;
+                </script>
+            
+            Switching variables with Destructuring 
+
+                [x, z] = [z, x];
+
+                We don't nead declare them again.
+            
+            Nested Arrays
+
+                <script>
+                    const nested = [2, 4, [5, 6]];
+
+                    const [i, , [j, k]] = nested;
+                </script>
+
+            We can use Destructuring in Destructuring;
+
+            We can write default values for 
 
 
 
