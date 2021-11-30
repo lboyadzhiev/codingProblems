@@ -19,6 +19,24 @@ JS
                 - Functions;
                 - ect...
 
+        Copying objects
+
+            For coppying an object we can use function "Obejct.assign"; We can use this function to merge two objects. The way we do coppying is to merge empty new object with the object that we want to coppy.
+
+                <script>
+
+                    const objOne = {
+                        firsName: 'John',
+                        lastName: 'Williams',
+                        age: 30,
+                    }
+
+                    Object.assign({}, objOne);
+                </script>
+
+
+                Obje
+
         Js Engine
 
             The JS Engine has two components: 
@@ -328,5 +346,8 @@ JS
                             ({ a, b } = { a: 10, b:20 }) => a + b; // result is 30;
 
                         Arrow function is not ok for methods, it has no own "this" keyword. Use his parrent 'this'.
+
+
+
 
 
