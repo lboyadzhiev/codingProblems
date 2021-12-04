@@ -2,4 +2,24 @@ Methods
 
     -- "reduce()"
 
-        
+        The 'reduce()' method executes a user-supplied 'reducer' callback function on each element of the array, in order, passing in the return value from the calculation on the preceding element. The final result of running the reducer across all elements of the array is asinge value.
+
+        The first time that the callback is run there is no 'retun value of the previous calculation'. If supplied, an initial value may be used in its place. Otherwise array element 0 is used as the initial value and iteration starts from the next element (index 1 instead of index 0);
+
+        The reducer walks through the array element by element, at each step adding the current array value to the result from the previous step - untill there are no more elements to add.
+
+            Syntax:
+
+                Arrow function 
+
+                    reduce((prev, currValue, currIndex, array) => { ... }, initialValue);
+                
+                Callback fucntion
+
+                    reduce(callbackFn, initialValue);
+
+                Inline callback fucntion
+
+                    reduce(function(prevValue, currValue, currIndex, array) { ... }, initialValue);
+
+                
