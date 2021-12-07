@@ -101,6 +101,75 @@ JS
             
             console.log(object.keyThree()); // valueOne valueTwo
 
+        DESCTRUCTURING OBJECTS
+
+            For this purpoce we use "{ }" inside we write varables. 
+
+                <script>
+
+                    const { keyOne, keyTwo } = object;
+
+                </script>
+            
+            This way the names are the same names from the object!
+
+            If we want different name doint this way:
+
+                <script>
+
+                    const { keyOne: variableName, keyTwo: variableName } = object;
+
+                </script>
+
+            Here we can set a default value. In case we don't have key that we specify, we set a default value otherways it going to give us "undefined".
+
+                <script>
+
+                    const { keyFour = [], keyOne: varableName = []} = object;
+
+                </script>
+
+            Mutating variable while desctructuring.
+
+                <script>
+
+                    let a = 111;
+                    let b = 999;
+                    const obj = { a: 23, b: 7, c: 14 };
+
+                    { a, b } = obj; // wrong
+
+                    ({ a, b } = obj);
+
+                </script>
+
+                If we start a row with "{}' JS expect a codeblock, and we cannot assign anythinbg to a codeblock, thats way we have "Unexpected token", to solve this we just wrap evetything in "()";
+
+            Nested Objects
+
+                <script>
+
+                    const obj = {
+                        keyOne: valueOne,
+                        keyTwo: valueTwo,
+                        keyThree: {
+                            keyFour: {
+                                newKeyOne: newValueOne,
+                                newKeyTwo: newValueTwo,
+                            },
+
+                            keyFive: {
+                                newKeyOne: newValueOne,
+                                newKeyTwo: newValueTwo,
+                            }
+                        }
+                    }
+
+                    const { keyFour: { open, close } } = keyThree; 
+                </script>
+
+                The properties inside should be the sama as in object.
+
         WHAT IS "this" KEYWORD
 
             In JS 'this' means context. This context is execution. Every function in JS has execution context and execution scope(lexical scope). The 'this' keyword refers to the current object the code is being written inside. This will always ensure that the correct values are used when a member's context changes. Arrow functions does not get own "this" keyword! The arrow function use lexical "this" that mean it use the "this" keyword from the parent scope. 
