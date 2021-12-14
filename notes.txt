@@ -459,4 +459,11 @@ JS
             We can write default values for 
 
 
+    Spread operator
+
+        Take all elements out of the array and write it manualy. We use it whenever we want an elements of the array individually. Only when pass an argument to a function and build a new array.
+        It look like the desctructuring, but the difference is that the spread operator take out all elements of the array and does not create new variables. And we used in placed that we need onlu values separeted by commas.
+
+        The spread operator works with all iterables(arrays, strings, maps, sets, NOT objects).
+
 

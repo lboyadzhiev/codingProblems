@@ -28,8 +28,12 @@ const restaurant = {
 
     orderDelivery: function ({ starterIndex, mainIndex, time, address }) {
         let message = `Order received! ${this.starterMenu[starterIndex]} and ${this.mainMenu[mainIndex]} will be delivered to ${address} at ${time}`;
+        return message;
+    },
 
-        console.log(message);
+    orderPasta: function (ing1, ing2, ing3) {
+        let message = `Here is your delicious pasta with ${ing1}, ${ing2} and ${ing3}`;
+        return message;
     },
 };
 
@@ -79,3 +83,35 @@ const obj = { a: 32, b: 8, c: 44 };
 const {
     fri: { open: o, close: c },
 } = openingHours;
+
+// The spread operator (...)
+const arr = [7, 8, 9];
+//we need to add new elements to the beggining of the array
+const badNewArr = [1, 2, arr[0], arr[1], arr[2]];
+const newArr = [1, 2, ...arr];
+
+// we will create a new array with element from the restaurant object - mainMenu, and add new element to it.
+const newMenu = [...restaurant.mainMenu, 'Gnocci'];
+
+// Copy array
+const mainMenuCopy = [...restaurant.mainMenu];
+
+//Join arrays
+const allMenu = [...restaurant.mainMenu, ...restaurant.starterMenu];
+
+// with strings
+const str = 'Lucho';
+const letters = [...str, ' ', 'S.'];
+
+//example
+const ingredients = ['a', 'b', 'c'];
+
+restaurant.orderPasta(...ingredients);
+
+//objects
+
+const newRestaurant = { ...restaurant, founder: 'Guiseppe' };
+
+//we can make a copy of the object
+const restaurantCopy = { ...restaurant };
+restaurantCopy.name = 'Ristorante Roma';
