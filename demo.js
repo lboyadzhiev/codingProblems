@@ -163,3 +163,35 @@ if (restaurant.orderPizza) {
 
 // short cicuiting
 restaurant.orderPizza && restaurant.orderPizza('mushrooms', 'spinach');
+
+//LOGICAL ASSIGNMENT OPERATORS
+
+const restOne = {
+    name: 'Capri',
+    // numGuests: 20,
+    numGests: 0,
+};
+
+const restTwo = {
+    name: 'La Piazza',
+    owner: 'Giovanni Rossi',
+};
+
+// OR assignment operator
+restOne.numGuests = restOne.numGuests || 10;
+//the same as above
+restOne.numGests ||= 10;
+restTwo.numGests = restTwo.numGests || 10;
+//the same as above
+restTwo.numGests ||= 10;
+
+//in case the value is '0';
+//nullish assignment operator
+restOne.numGests ??= 10;
+restTwo.numGests ??= 10;
+
+//AND assignment operator
+restOne.owner = restOne.owner && '<anonymous>';
+restOne.owner &&= '<anonymous';
+restTwo.owner = restTwo.owner && '<anonymous>';
+restTwo.owner &&= '<anonymous';
