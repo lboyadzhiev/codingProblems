@@ -35,6 +35,10 @@ const restaurant = {
         let message = `Here is your delicious pasta with ${ing1}, ${ing2} and ${ing3}`;
         return message;
     },
+
+    orderPizza: function (mainIngredient, ...otherIngredients) {
+        return mainIngredient, otherIngredients;
+    },
 };
 
 restaurant.orderDelivery({
@@ -84,7 +88,7 @@ const {
     fri: { open: o, close: c },
 } = openingHours;
 
-// The spread operator (...)
+// THE SPREAD OPERATOR (...)
 const arr = [7, 8, 9];
 //we need to add new elements to the beggining of the array
 const badNewArr = [1, 2, arr[0], arr[1], arr[2]];
@@ -115,3 +119,47 @@ const newRestaurant = { ...restaurant, founder: 'Guiseppe' };
 //we can make a copy of the object
 const restaurantCopy = { ...restaurant };
 restaurantCopy.name = 'Ristorante Roma';
+
+// REST PATTERN AND PARAMETERS
+
+// 1) Destructuring
+
+// SPREAD, because on RIGHT side of '='
+const spreadArr = [1, 2, ...[3, 4]];
+
+//REST, because on LEFT side of '='
+const [x, y, ...others] = [1, 2, 3, 4, 5];
+
+const [pizaa, , risotto, ...otherFood] = [...restaurant.mainMenu, ...restaurant.starterMenu];
+
+// Objects
+const { sat, ...weekdays } = restaurant.openingHours;
+
+// 2) Functions
+const add = function (...params) {
+    let sum = 0;
+    for (let i = 0; i < params.length; i++) {
+        sum += params[i];
+    }
+
+    return sum;
+};
+
+//LOGICAL OPERATORS
+// Short Circuiting (&& and ||);
+//OR operator
+restaurant.numGests = 0;
+const guestOne = restaurant.numGests ? restaurant.numGests : 10;
+//short circuiting
+const guestTwo = restaurant.numGests || 10;
+//Nullish: null and undefined;
+const guestCorrect = restaurant.numGests ?? 10;
+
+// AND operator
+
+if (restaurant.orderPizza) {
+    restaurant.orderPizza('mushrooms', 'spinach');
+}
+
+// short cicuiting
+restaurant.orderPizza && restaurant.orderPizza('mushrooms', 'spinach');

@@ -466,4 +466,43 @@ JS
 
         The spread operator works with all iterables(arrays, strings, maps, sets, NOT objects).
 
+    Rest Patterns and Parameters 
+
+        Rest pattern looks exactly like spread operator '...', but it actualy do the oposite of the spread operator. The spread operator unpack elements from an arrya, while rest operator pack the elements into array. The 'rest patterns' are locatet on the left side of the '='.
+
+        The 'rest pattern' always must be the last in desctructuring assign.
+
+        We can use REST to collect object too.
+
+        ! The REST take multiple values and pack the out in an array.
+
+    
+    LOGICAL OPERATORS
+         Short Circuiting (&& and ||);
+
+
+        Logical operators can be used not only with booleans.
+            - They can use any data type;
+            - They can return any data type;
+            - And they do something called 'short circuiting';
+
+                'OR' operator
+                    console.log(3 || 'string");
+                    console.log('' || 'string');
+                    console.log(true || 0);
+                    console.log(undefined || null);
+
+                    If the first value is truthy, then the second one will not be avalueted.
+
+                    '??' this operator works with nullish values, and in case we have '0' as value it will print it in.
+
+                'AND' operator
+                    console.log(0 && 'String')
+
+                    'End' operator short circuites when the first value is false. And return that false value without evalueted the rest ones. When all of the values are thuthy it return the last one.
+
+        It is not good idea to replace all if else statements with this operator, because the code is become hard to read!!!
+
+        
+
 
