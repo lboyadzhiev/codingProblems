@@ -506,7 +506,19 @@ JS
 
     LOGICAL ASSIGNMENT OPERATORS
 
+    LOOPING OBJECTS: OBJECT KEYS, VALUES, AND ENTRIES
 
+        over property names
+
+            "Object.keys(objectName)" - returns an array with the keys from the object;
+
+        Over property values;
+
+            'Object.values(objectName) - returns an array with the values from the object;
+
+        Overt the entire object (key + values);
+
+            'Object.entries(objectName)" - tranfrom the object into an array and return keys and values from the obects
 
         
 

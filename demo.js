@@ -2,41 +2,48 @@
 
 // ARRAY DESTRUCTURING
 
+// ENHANCED OBJECT LITERALS
+const weekdays = ['mon', 'tue', 'wed', 'thu', 'fri', 'sat', 'sun'];
+const openingHours = {
+    [weekdays[3]]: {
+        open: 12,
+        close: 22,
+    },
+    [weekdays[4]]: {
+        open: 11,
+        close: 23,
+    },
+    [weekdays[5]]: {
+        open: 0,
+        close: 24,
+    },
+};
+
 const restaurant = {
     name: 'Classico Italiano',
     location: 'Via Angelo Tavanti 23, Firenze, Italy',
     categories: ['Italian', 'Pizzeria', 'Vegetarian', 'Organic'],
     starterMenu: ['Focaccia', 'Bruschetta', 'Garlic Bread', 'Caprese Salad'],
     mainMenu: ['Pizza', 'Pasta', 'Risotto'],
-    openingHours: {
-        thu: {
-            open: 12,
-            close: 22,
-        },
-        fri: {
-            open: 11,
-            close: 23,
-        },
-        sat: {
-            open: 0,
-            close: 24,
-        },
-    },
+
     order: function (starterIndex, mainIndex) {
         return [this.starterMenu[starterIndex], this.mainMenu[mainIndex]];
     },
 
-    orderDelivery: function ({ starterIndex, mainIndex, time, address }) {
+    // ES6 enhanced object literals
+    openingHours,
+
+    orderDelivery({ starterIndex, mainIndex, time, address }) {
         let message = `Order received! ${this.starterMenu[starterIndex]} and ${this.mainMenu[mainIndex]} will be delivered to ${address} at ${time}`;
         return message;
     },
 
-    orderPasta: function (ing1, ing2, ing3) {
+    orderPasta(ing1, ing2, ing3) {
         let message = `Here is your delicious pasta with ${ing1}, ${ing2} and ${ing3}`;
         return message;
     },
 
-    orderPizza: function (mainIngredient, ...otherIngredients) {
+    orderPizza(mainIngredient, ...otherIngredients) {
         return mainIngredient, otherIngredients;
     },
 };
@@ -67,7 +74,7 @@ const [p = 1, q = 1, r = 1] = [8, 9];
 // OBJECT DESTRUCTURING
 
 // props exactly like in the object
-const { name, openingHours, categories } = restaurant;
+const { name, workingOn, categories } = restaurant;
 
 // our varable names
 const { name: restaurantName, openingHours: hours, categories: tags } = restaurant;
@@ -133,7 +140,7 @@ const [x, y, ...others] = [1, 2, 3, 4, 5];
 const [pizaa, , risotto, ...otherFood] = [...restaurant.mainMenu, ...restaurant.starterMenu];
 
 // Objects
-const { sat, ...weekdays } = restaurant.openingHours;
+const { sat, ...resOfTheDays } = restaurant.openingHours;
 
 // 2) Functions
 const add = function (...params) {
@@ -164,7 +171,7 @@ if (restaurant.orderPizza) {
 // short cicuiting
 restaurant.orderPizza && restaurant.orderPizza('mushrooms', 'spinach');
 
-//LOGICAL ASSIGNMENT OPERATORS
+// LOGICAL ASSIGNMENT OPERATORS
 
 const restOne = {
     name: 'Capri',
@@ -180,18 +187,52 @@ const restTwo = {
 // OR assignment operator
 restOne.numGuests = restOne.numGuests || 10;
 //the same as above
-restOne.numGests ||= 10;
+// restOne.numGests ||= 10;
 restTwo.numGests = restTwo.numGests || 10;
 //the same as above
-restTwo.numGests ||= 10;
+// restTwo.numGests ||= 10;
 
 //in case the value is '0';
 //nullish assignment operator
-restOne.numGests ??= 10;
-restTwo.numGests ??= 10;
+// restOne.numGests ??= 10;
+// restTwo.numGests ??= 10;
 
 //AND assignment operator
 restOne.owner = restOne.owner && '<anonymous>';
-restOne.owner &&= '<anonymous';
+// restOne.owner &&= '<anonymous';
 restTwo.owner = restTwo.owner && '<anonymous>';
-restTwo.owner &&= '<anonymous';
+// restTwo.owner &&= '<anonymous';
+
+//LOOPING ARRAYS
+
+const menuArr = [...restaurant.starterMenu, ...restaurant.mainMenu];
+
+for (let item of menuArr) {
+    // console.log(item);
+}
+
+for (const [i, el] of menuArr.entries()) {
+    // console.log(`${i + 1}: ${el}`);
+}
+
+// LOOPING OBJECTS: OBJECT KEYS, VALUES, AND ENTRIES
+
+// over property names
+const properties = Object.keys(openingHours);
+
+let openStr = `We are open on ${properties.length} days: `;
+
+for (const day of properties) {
+    openStr += `${day}, `;
+}
+
+// property values
+const values = Object.values(openingHours);
+
+// names + values
+const entries = Object.entries(openingHours);
+
+// loop over the obj
+for (const [day, { open, close }] of entries) {
+    console.log(`On ${day} we open at ${open} and close at ${close}.`);
+}
