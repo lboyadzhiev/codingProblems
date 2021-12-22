@@ -234,5 +234,99 @@ const entries = Object.entries(openingHours);
 
 // loop over the obj
 for (const [day, { open, close }] of entries) {
-    console.log(`On ${day} we open at ${open} and close at ${close}.`);
+    // console.log(`On ${day} we open at ${open} and close at ${close}.`);
 }
+
+// SET
+
+const ordersSet = new Set(['Pasta', 'Pizza', 'Pizza', 'Risotto', 'Pasta', 'Pizza']);
+// strings are iterable
+const stringSet = new Set('Lucho');
+// we can take size of the set
+const ordersSize = ordersSet.size;
+// check if something is in there (has()-method)
+const bool = ordersSet.has('Pizza');
+// add new element to a set
+ordersSet.add('Garlick Bread');
+// delete elements
+ordersSet.delete('Risotto');
+// delete all of the elements
+// ordersSet.clear();
+
+// loop ove the set
+for (const order of ordersSet) {
+    // console.log(order);
+}
+
+// use case Example
+
+const staff = ['Waiter', 'Chef', 'Waiter', 'Manager', 'Chef', 'Waiter'];
+
+// it returns no array, and we make it, as we know.
+const staffUnique = [...new Set(staff)];
+
+// MAPS FUNDAMENTLS
+
+// create an emtpy map
+const rest = new Map();
+
+// fill up the map (use .set method)
+rest.set('name', 'Classico Italiano');
+rest.set(1, 'Firenze, Italy');
+rest.set(2, 'Lisbon, Portugal');
+
+// chain with set method
+rest.set('categoris', ['Italian', 'Pizzeria', 'Vegetarian', 'Organic'])
+    .set('open', 11)
+    .set('close', 23)
+    .set(true, 'We are open')
+    .set(false, 'We are closed');
+
+// read data from a map - get method
+const data = rest.get('name');
+
+const time = 21;
+let result = rest.get(time > rest.get('open') && time < rest.get('close'));
+
+// Check if map contains certain key
+const check = rest.has('categoris');
+
+// Delete elements from the map - happends based on the key;
+rest.delete(2);
+
+// size propertie
+const sizeMap = rest.size;
+
+// clear all map
+// rest.clear();
+
+const arrKey = [1, 2];
+rest.set(arrKey, 'Test');
+
+let getArr = rest.get(arrKey);
+
+// MAPS ITERATION
+
+const question = new Map([
+    ['question', 'What is the best programming language in the world?'],
+    [1, 'C'],
+    [2, 'Java'],
+    [(3, 'JavaScript')],
+    ['correct', 3],
+    [true, 'Correct'][(false, 'Try again!')],
+]);
+
+// Convert object to map
+const hoursMap = new Map(Object.entries(openingHours));
+
+for (const [key, value] of question) {
+    if (typeof key === 'number') {
+        console.log(`Answer ${key}: ${value}`);
+    }
+}
+
+const answer = Number(prompt('Your answer'));
+question.get(question.get('correct') === answer);
+
+// convert map into an array
+let mapArray = [...question];

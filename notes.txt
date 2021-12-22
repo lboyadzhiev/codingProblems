@@ -522,4 +522,48 @@ JS
 
         
 
+    SETS
 
+        Set is a collection with unique values. Than means that set they never have dublicates. We can not retrieave data from the set, like we do in the array, that is becouse in SETS there is no indexes. Base use case in to remove dublicate value from array.
+
+    MAPS: FUNDAMENTALS
+
+        MAPS is a data sctructure that we can use to map values into a keys. Just like in an object thata is stored in key: value pairs. The difference is that the keys in maps can have any types. In object the keys can be only strings.
+
+        The easiest way to create a map is, to creata an empty map, and then we fille id.
+        We use '.set' method to fill up the map. and we pass two arguments - the key and the value. This method 'set' don't just full up the map and also return the updated map, that is calling to.
+        We can chain the set
+    
+    MAPS: ITERATION
+
+    WHICH DATA STRUCTURE TO USE?
+
+        Sourced of Data:
+            1. From the program itself: Data written directly in source code;
+            2. From the UI: Data input from the user or data written in DOM;
+            3. From external sources: Data fetched for example from we API;
+
+        All of this data is called collection of data, and we use data structure to store it, how to choose;
+
+            1. Simple list? - Arrays or Sets;
+                1.1. Arrays
+                    - Use when we need ordered list of values (maiht contain dublicates);
+                    - Use when we need to manipulate data;
+                1.2. Sets:
+                    - Use when we need to work with unique values;
+                    - Use when high-performance is really important;
+                    - Use to remove duplicates from arrays;
+
+            2. Key / Value pairs? - Objects or Maps;
+                2.1. Objects:
+                    - More 'traditional' key/value store ('abused' objects);
+                    - Easier to write and access values wiht '.' and '[]';
+                    - Use when we need to include fucntions(methods);
+                    - Use when working with JSON(can convert to map);
+                2.2 Maps:
+                    - Better performance;
+                    - Keys can have any data type;
+                    - Easy to iterate;
+                    - Easy to compute size;
+                    - Use when we simply need to map key to values;
+                    - Use when we need keys that are not strings;
