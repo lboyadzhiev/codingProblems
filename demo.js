@@ -3,6 +3,8 @@
 // ARRAY DESTRUCTURING
 
 // ENHANCED OBJECT LITERALS
+
+/*
 const weekdays = ['mon', 'tue', 'wed', 'thu', 'fri', 'sat', 'sun'];
 const openingHours = {
     [weekdays[3]]: {
@@ -330,3 +332,94 @@ question.get(question.get('correct') === answer);
 
 // convert map into an array
 let mapArray = [...question];
+
+*/
+
+// WORKING WITH STRINGS
+
+const airline = 'BULGARIAN Air Weis';
+const plane = 'A320';
+
+// get a character from a string in a certain position
+const char = plane[0];
+const charStr = 'B737'[0];
+const length = airline.length;
+const lengthStr = 'B737'.length;
+
+// index of - method
+const index = airline.indexOf('W'); // give us furst occurance
+const lastIndex = airline.lastIndexOf('A'); // give us last occurance
+const wordIndex = airline.indexOf('Weis'); // we can search words
+
+//slice method
+const newString = airline.slice(4);
+const strEnd = airline.slice(10, 13);
+
+const firstWord = airline.slice(0, airline.indexOf(' '));
+const lastWord = airline.slice(airline.lastIndexOf(' ') + 1);
+
+// we can exctract from the end
+const fromEnd = airline.slice(-2);
+// we can edit negative end parameter
+const endParam = airline.slice(1, -1);
+
+// practise
+const checkMiddleSeat = function (seat) {
+    const s = seat.slice(-1);
+    if (s === 'B' || s === 'E') {
+        return 'You got the middle seat';
+    } else {
+        return 'You got lucky!';
+    }
+};
+
+//toLowerCase(), toUpperCase() - methods
+const lower = airline.toLowerCase();
+const upper = airline.toUpperCase();
+
+// replacing - replace()
+const priceEU = '288,97$';
+const priceBG = priceEU.replace('$', 'lv').replace(',', '.');
+
+const announcement = 'All passengers come to boardring door 23, Boarding door 23.';
+const newAnnouncement = announcement.replace('door', 'gate');
+
+// replace all if replaceAll doen't work
+const allReplaced = announcement.replace(/door/g, 'gate');
+
+// includes()
+const newPlane = 'A320neo';
+const boolean = newPlane.includes('A320');
+
+// startsWith()
+const beginning = newPlane.startsWith('Air');
+
+// split()
+let string = 'a+very+nice+string'.split('+'); // return an array
+const myName = 'Luchezar Boyadzhiev';
+const [firstName, lastName] = myName.split(' ');
+
+// join();
+const newName = ['Mr.', firstName, lastName.toUpperCase()].join(' ');
+
+// Padding
+const message = 'Go to gate 23!';
+const newMessage = message.padStart(25, '+');
+const messageNew = message.padEnd(22, '-');
+
+// example padding
+
+const maskCreditCard = function (number) {
+    const str = number + '';
+    const last = str.slice(-4);
+
+    return last.padStart(str.length, '*');
+};
+
+// repeat()
+const messageTwo = 'Bad weather... All Departures  Delayed... ';
+const repeatMessage = messageTwo.repeat(5);
+
+const planesInLine = function (n) {
+    return `There are ${n} planes in line ${';)'.repeat(n)}`;
+};

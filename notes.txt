@@ -567,3 +567,37 @@ JS
                     - Easy to compute size;
                     - Use when we simply need to map key to values;
                     - Use when we need keys that are not strings;
+
+
+    STRINGS
+
+        We can search characters like we do in an array.
+
+        Methods: 
+
+            -- indexOf() 
+                Returns the first index at which a given element can be found;
+
+            -- slice() 
+                Returns a shallow copy of a portion of an array / string into a new array object selected from start to end (end not included) where start and end represent the index of items in that array / string. The original array / string will not be modified. The length of the new array / string going to be the endIndex minus startIndex.
+
+            -- replace() 
+                Returns a new string with some or all matcher of a pattern replaced by a replacement. Replace method is case sensitive. The pattern can be a string of a RegExp, and the replacement can be a string or a fucntion to be called for each match. If pattern is a string, only the first occurrence will be replaced. The original string is left unchanged!!!
+
+            -- includes()
+                Determines whether an array includes a certain value among its entries, returning true of false as appropirate.
+            -- startsWith()
+                determines whether a string begins with the characters of a specified string, retutning boolean.
+
+            -- split()
+                divides a String into an ordered list of substrings, puts these substrings into an array, and return the array. The division done by searching for a pattern, where the pattern is provided as the first parameter in the method's call.
+            
+            -- join()
+                Creates and returns a new string by concatenating all of the elements in an array, separated by commas or a specified separator string.
+            
+            -- padStart()
+                Pads the current string with another string (multiple times, if needed) until the RESULT string reaches the given length. The padding is applied from the start of the current string.
+
+            -- padEnd()
+                Pads the current string with a given string so that the resulting string reaches a given length.
+            
